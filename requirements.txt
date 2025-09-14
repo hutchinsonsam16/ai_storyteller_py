@@ -1,0 +1,7 @@
+Flask
+pywebview
+ctransformers
+diffusers
+torch
+accelerate
+Pillow

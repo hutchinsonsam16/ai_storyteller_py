@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Storyteller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p id="loading-text">Initializing AI Models...</p>
+    </div>
+
+    <div class="game-container">
+        <div class="panel" id="character-panel">
+            <h2 id="char-name">Character Name</h2>
+            <div id="char-portrait-container"></div>
+            <h3>Status</h3>
+            <p id="char-status">Healthy and ready.</p>
+            <h3>Inventory</h3>
+            <ul id="char-inventory">
+                <li>No items yet.</li>
+            </ul>
+            <h3>Backstory</h3>
+            <p id="char-backstory">A mysterious past awaits.</p>
+        </div>
+
+        <div class="panel" id="narrative-panel">
+            <div id="story-log">
+                </div>
+            <div class="input-area">
+                <textarea id="player-input" placeholder="What do you do next?"></textarea>
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+
+        <div class="panel" id="context-panel">
+            <h2>World Context</h2>
+            <h3>Lore</h3>
+            <div id="world-lore">
+                <p>The world is yet to be defined.</p>
+            </div>
+            <h3>NPCs</h3>
+            <div id="world-npcs">
+                <p>No characters met yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
