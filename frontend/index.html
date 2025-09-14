@@ -4,48 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Storyteller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="spinner"></div>
-        <p id="loading-text">Initializing AI Models...</p>
+    <div id="download-container" class="onboarding-container">
+        <h2>First-Time Model Setup</h2>
+        <p>This application needs to download the required AI models. This is a one-time process and may take a long time. Please ensure you are connected to the internet.</p>
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <p id="download-status">Ready to begin download...</p>
+        <button id="start-download-button">Start Download</button>
     </div>
 
-    <div class="game-container">
+    <div id="onboarding-container" class="onboarding-container hidden">
+        <h2>Create Your Saga</h2>
+        <label for="model-select">Choose Your AI Storyteller</label>
+        <select id="model-select">
+            <option value="phi-3">Phi-3 Mini (Fastest, Recommended)</option>
+            <option value="gemma">Google Gemma 2B (Balanced)</option>
+            <option value="mistral">Mistral 7B (Slower, High Quality)</option>
+            <option value="kunoichi">Kunoichi 7B (Slower, Creative)</option>
+        </select>
+        <label for="image-model-select">Choose Your Image Engine</label>
+        <select id="image-model-select">
+            <option value="sd1.5">Stable Diffusion 1.5 (Reliable)</option>
+            <option value="qwen">Tiny Stable Diffusion (Fastest)</option>
+            <option value="sd-turbo">SD Turbo (High Speed)</option>
+        </select>
+        <label>World Concept</label>
+        <textarea id="world-concept">A gritty cyberpunk city where mega-corporations rule.</textarea>
+        <label>Character Name</label>
+        <input type="text" id="onboarding-char-name" value="Jax">
+        <label>Character Backstory</label>
+        <textarea id="onboarding-char-backstory">An ex-corporate netrunner, burned by their employer.</textarea>
+        <label>Opening Scene</label>
+        <textarea id="opening-prompt">Jax patches into the network from a dimly lit noodle stand.</textarea>
+        <button id="start-button">Begin Adventure</button>
+    </div>
+
+    <div id="game-container" class="game-container hidden">
         <div class="panel" id="character-panel">
-            <h2 id="char-name">Character Name</h2>
-            <div id="char-portrait-container"></div>
-            <h3>Status</h3>
-            <p id="char-status">Healthy and ready.</p>
-            <h3>Inventory</h3>
-            <ul id="char-inventory">
-                <li>No items yet.</li>
-            </ul>
-            <h3>Backstory</h3>
-            <p id="char-backstory">A mysterious past awaits.</p>
+             <h2 id="char-name"></h2><div id="char-portrait-container"><div class="portrait-placeholder">No Image</div></div><h3>Status</h3><p id="char-status"></p><h3>Inventory</h3><ul id="char-inventory"></ul><h3>Backstory</h3><p id="char-backstory"></p>
         </div>
+        <div class="panel" id="narrative-panel"><div id="story-log"></div><div class="input-area"><textarea id="player-input" placeholder="What do you do next?"></textarea><button id="send-button">Send</button></div></div>
+        <div class="panel" id="context-panel"><h2>World Context</h2><h3>Lore</h3><div id="world-lore"></div><h3>NPCs</h3><div id="world-npcs"></div></div>
+    </div>
 
-        <div class="panel" id="narrative-panel">
-            <div id="story-log">
-                </div>
-            <div class="input-area">
-                <textarea id="player-input" placeholder="What do you do next?"></textarea>
-                <button id="send-button">Send</button>
-            </div>
-        </div>
-
-        <div class="panel" id="context-panel">
-            <h2>World Context</h2>
-            <h3>Lore</h3>
-            <div id="world-lore">
-                <p>The world is yet to be defined.</p>
-            </div>
-            <h3>NPCs</h3>
-            <div id="world-npcs">
-                <p>No characters met yet.</p>
-            </div>
-        </div>
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p id="loading-text">Loading AI Model...</p>
     </div>
 
     <script src="main.js"></script>

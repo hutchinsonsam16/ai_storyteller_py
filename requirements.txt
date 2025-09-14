@@ -1,7 +1,12 @@
 Flask
 pywebview
-ctransformers
-diffusers
+transformers
 torch
 accelerate
+diffusers
 Pillow
+ctransformers
+llama-cpp-python
+huggingface_hub
+huggingface_hub[hf_xet]
+hf_xet
