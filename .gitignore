@@ -1,0 +1,99 @@
+models/
+
+# ====================
+# Node.js
+# ====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+.env
+.env.*
+
+
+# ====================
+# Python
+# ====================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+*.manifest
+*.spec
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Python virtual environment metadata
+poetry.lock
+Pipfile.lock
+
+# PyInstaller
+*.spec
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# ====================
+# OS / IDE Specific
+# ====================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+
+# VS Code
+.vscode/
+.history/
+
+# JetBrains IDEs (PyCharm, WebStorm, etc.)
+.idea/
+
+# ====================
+# Logs / Outputs
+# ====================
+*.log
+logs/
+*.out
+*.err
+
+# ====================
+# Misc
+# ====================
+# Ignore data or model folders (if needed)
+data/
+models/
+*.h5
+*.pkl
+*.joblib
+
+# Ignore temporary or experimental notebooks
+*_checkpoint.ipynb
